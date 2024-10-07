@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }}</title>
 
   {% feed_meta %}
@@ -13,7 +14,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="container">
+<body>
   {% include nav.html %}
 
   {{ content }}
