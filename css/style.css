@@ -32,7 +32,7 @@ html {
   color: var(--gray-900);
 }
 
-ul {
+.home ul {
   list-style: none;
   padding: 0;
 }
