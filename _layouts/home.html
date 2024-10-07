@@ -1,0 +1,67 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <section class="profile-section">
+    <img src="/assets/images/profile-headshot.png" alt="Zach's profile picture" class="profile-image">
+
+    <p>
+      I'm a software engineer living in Cincinnati, Ohio. I currently work as the lead maintainer for <a
+        href="https://maybe.finance">Maybe Finance</a> and run several websites
+      including <a href="https://www.thediygolfer.com">The DIY Golfer</a>, <a href="https://www.localgolfspot.com">Local
+        Golf Spot</a>, and <a href="https://www.fullstackfoundations.com">Full Stack Foundations</a>.
+    </p>
+  </section>
+
+  <section class="posts-section">
+    <h2 class="section-title">Writing</h2>
+
+    <ul class="post-list">
+      {% for post in site.posts %}
+      <li class="post-list__item">
+        <span class="post-list__date">{{ post.date | date: "%Y-%m-%d" }}</span>
+        <i class="fa-solid fa-arrow-right post-arrow"></i>
+        <a href="{{ post.url }}" class="post-link">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="projects-section">
+    <h2 class="section-title">My current work</h2>
+
+    <p>I currently work as the lead maintainer for <a href="https://maybe.finance">Maybe Finance</a>, a commercial open
+      source personal finance app written in Ruby on Rails. I have been involved with this project since late-2021 and
+      have seen it fail, rise from the dead, and turn into a thriving open source project. It's a long story; you can
+      read more about it <a href="https://x.com/zg_dev/status/1751988660646424979">here</a>.</p>
+  </section>
+
+  <section class="projects-section">
+    <h2 class="section-title">Golfer at heart</h2>
+
+    <p>While I've had far less time to play in recent years, golf has always been a big part of my life. I <a
+        href="https://gozips.com/sports/mens-golf/roster/zach-gollwitzer/1916">played
+        collegiate golf for The University of Akron</a> from 2013-2017 and had the privilege to see some of the most
+      beautiful
+      places on earth and compete against some of the best college golfers in the country. It was an incredible
+      experience.</p>
+
+    <p>During my time as a collegiate golfer, I created <a href="https://www.thediygolfer.com">The DIY Golfer</a>, a
+      golf blog turned golf instructional website that I've been running since 2015.</p>
+
+    <p>More recently, I built <a href="https://www.localgolfspot.com">Local Golf Spot</a>, a website dedicated to
+      helping golfers find the best golf courses, driving ranges, instructors and more.</p>
+  </section>
+
+  <section class="projects-section">
+    <h2 class="section-title">Full Stack Foundations</h2>
+
+    <p>My <a href="https://www.youtube.com/@{{ site.youtube_username }}">web development YouTube channel</a> has reached
+      2M+ students and I have helped several land jobs in tech and develop a passion for writing code.</p>
+
+    <p><a href="https://www.fullstackfoundations.com">Full Stack Foundations</a> is a website I created to host all of
+      my web development tutorials in one place.</p>
+  </section>
+</div>
