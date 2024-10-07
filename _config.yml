@@ -22,7 +22,7 @@ title: Zach Gollwitzer
 email: zach.gollwitzer@gmail.com 
 description: >- 
   I‘m a software engineer living in Cincinnati, OH. I'm the lead maintainer of Maybe, a COSS personal finance app. I also run several golf websites and apps that I created while playing college golf. 
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "/me" # the subpath of your site on gh-pages
 url: "https://www.zachgollwitzer.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: zg_dev
 github_username: zachgoll
@@ -33,7 +33,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-  
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
