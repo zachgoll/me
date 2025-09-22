@@ -10,31 +10,31 @@
 }
 
 .prose h2 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   margin-top: 1.8rem;
   margin-bottom: 0.8rem;
 }
 
 .prose h3 {
-  font-size: 1.6rem;
+  font-size: 1.25rem;
   margin-top: 1.6rem;
   margin-bottom: 0.6rem;
 }
 
 .prose h4 {
-  font-size: 1.4rem;
+  font-size: 1.125rem;
   margin-top: 1.4rem;
   margin-bottom: 0.4rem;
 }
 
 .prose h5 {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-top: 1.2rem;
   margin-bottom: 0.3rem;
 }
 
 .prose h6 {
-  font-size: 1rem;
+  font-size: 0.875rem;
   margin-top: 1rem;
   margin-bottom: 0.2rem;
 }

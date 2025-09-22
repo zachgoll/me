@@ -1,5 +1,5 @@
 /* Import Inter font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import 'prose.css';
 
 /* CSS Reset */
@@ -89,7 +89,14 @@ nav a:visited {
 
 .home section h2 {
   margin-bottom: 1rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
+}
+
+.home section h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 500;
 }
 
 .home section p {
@@ -123,6 +130,7 @@ footer {
   align-items: center;
   flex-wrap: wrap;
   gap: 0.5rem;
+  padding: 0.25rem 0;
 }
 
 .post-link__date {

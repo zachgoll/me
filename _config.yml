@@ -28,6 +28,7 @@ github_username: zachgoll
 youtube_username: '@zachgoll'
 
 # Build settings
+permalink: pretty
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
