@@ -1,12 +1,38 @@
-_This is a **repost** of the [final release notes for Maybe](https://github.com/maybe-finance/maybe/releases/tag/v0.6.0) I wrote up for the personal finance app I was the lead maintainer of. We gained significant traction in the self-hosted OSS community in a short period of time (over 50k stars and 2M+ total package downloads), but due to sluggish revenue growth for our hosted offering, small team, and limited runway, our founders [made the difficult decision](https://x.com/Shpigford/status/1947725345244709240) to stop development and pivot to a new offering. I wanted to repost this here as I think it outlines some interesting challenges faced while building a B2C personal finance app in 2025 and reflects some of the challenges I faced as an engineer while working on this app._
+---
+title: "Reflections on Building an Open Source Personal Finance App"
+---
 
-## Thanks to our contributors and beta testers!
+## Preface
+
+TL;DR - Maybe has pivoted, and we're now working on a B2B financial planning and forecasting app to help business owners gain insights into their finances without complicated spreadsheets.
+
+Here's the (short) story of how we landed here.
+
+I've been working at Maybe Finance Inc. since 2021. But as it sometimes happens at a startup, my path has not been linear. In short, I worked on a team of 3 engineers (I was the first hire) from 2021-2023 building a closed-source, personal finance app. We built an awesome product, but funding ran out, and the company effectively shut down in mid-2023. At this time, I decided it was my chance to finally put some serious work into growing my golf websites [The DIY Golfer](https://www.thediygolfer.com) and [Local Golf Spot](https://www.localgolfspot.com), which I had been growing for several years in a part-time capacity. I wanted to prove out whether there was a business in either of these sites, so I worked hard on this for ~12 months until one day, Maybe's founder decided to open-source all the code we had written for the V1 version of the personal finance Maybe app (with permission of course). Well... It went viral on Github, and the company raised another pre-seed round of funding. At this point, I was asked if I wanted to work on this again as a COSS (commercial open source) version of the prior app. I had to make the tough decision of whether to continue working on my own thing or make a second attempt at the app that had failed prior.
+
+I [decided to take the offer](https://x.com/zg_dev/status/1751988660646424979) and dive head-first into the world of open-source software. I was absolutely pumped.
+
+Our first major decision for the V2 version of Maybe was tech stack. We had previously written the app in Next.js and had deployed everything to AWS primarily for compliance reasons. The prior version of our app had a financial advising component to it, which meant we had to be registered as an advisor with the SEC and were subject to a huge list of compliance requirements. In other words, our prior tech stack was relatively complex _by necessity_, and given we were pivoting to an OSS app that self-hosters would be running on their own machines, we felt that this complexity was going to weigh us down from the start.
+
+While we knew it would require a lot of re-building, we decided to scrap the Next.js version of the app and start over with Ruby on Rails, which would provide our now very small team (1 engineer, 1 designer) a productive framework that was easy to self host.
+
+We got to work, and over the course of the next year or so, we made a ton of progress and quickly surpassed our "V1" app in features. I got a crash course in maintaining a popular OSS repo, we started a successful code bounty program, we got 2M+ package downloads, amassed 50k+ stars on Github, and launched a commercial hosted offering. Fortunately for the OSS community, but unfortunately for our business, the self-hosted app became wildly popular, but the hosted offering failed to generate the revenue growth we needed. It was at this point our founders made the [difficult decision to pivot](https://x.com/Shpigford/status/1947725345244709240) to what we're now working on.
+
+As the lead developer of both the V1 and V2 versions of this product, it was bittersweet to shut it all down for a second time. I gave it my all and still believe we built one of the simplest, highest quality personal finance apps on the market (I still use the self-hosted version for my family's finances).
+
+All that said, business is hard, and business in the fintech industry is harder. While I was primarily working on the engineering side of things, there were a lot of technical and business lessons learned over the years of trying to make this app work. I've summarized many of them in the final release I shared with our OSS community below.
+
+## Final Release (repost)
+
+_Below is the [repost](https://github.com/maybe-finance/maybe/releases/tag/v0.6.0) of my final release notes, which I wrote up to reflect on some of the biggest challenges of building a personal finance app._
+
+### Thanks to our contributors and beta testers!
 
 Before I talk too much about the engineering and product side of things, we want to extend our gratitude to our awesome contributors! We had hundreds of individuals contribute to the project and even more helping report bugs, suggest features, and raise new ideas.
 
 This is a huge project and we couldn't have gotten this far without our early supporters and OSS contributors.
 
-## Demo
+### Demo
 
 Below is a quick demo of what the Maybe app can do. You can learn how to deploy it following our [Docker Setup guide](https://github.com/maybe-finance/maybe/blob/main/docs/hosting/docker.md).
 
@@ -29,17 +55,17 @@ Self hosted features include:
 - Invite members to your household
 - 2FA
 
-## Recap, Reflections
+### Recap, Reflections
 
 For many of you, this final release comes with a sense of disappointment, and that's understandable. We're not excited about this either, and wish we had unlimited time and money to fulfill our vision for this app (we have years worth of new feature designs in the backlog)! In the end, our obligation as a company is to our investors, and as outlined in [Josh's post here](https://x.com/Shpigford/status/1947725345244709240), we've determined that continuing to build this app is not our best chance at paying back our investors and profiting as a company.
 
 That said, over the last few years, our team has dedicated some serious amount of thought asking the question, "How can we build a better personal finance app?". And in that light, I'd be remiss not to share some of our biggest successes, failures, and unexpected challenges along the way. We hope that some of these reflections propel the OSS community forward and one day lead to a truly great, OSS personal finance app.
 
-## The wins
+### The wins
 
 We've been thinking about personal finance for a lot of years. This isn't our first attempt at creating this app, and along the way, we've learned some valuable lessons that have made it into the final release of this software.
 
-### A simple, beautiful personal finance app
+#### A simple, beautiful personal finance app
 
 ![Maybe Dashboard](/assets/images/maybe-dashboard.png)
 
@@ -54,7 +80,7 @@ Our goal with this app was to _remove complexity_ from personal finance. Many pe
 
 This app answers all of those questions and gives the user a simple interface to categorize, organize, and get to those answers quicker. While some users might look for a richer feature set, we believe most users are satisfied with less; not more.
 
-### A place for everything
+#### A place for everything
 
 One of our greatest frustrations with other personal finance apps is not having a "place" or a "home" for common financial scenarios.
 
@@ -80,17 +106,17 @@ Outside these common scenarios, the Maybe app also allows you to create various 
 
 We set out to create an app that has a place for all your financial scenarios, and while I think there is still work to be done on this front, we handled the most important ones (unlike many other apps). And we're proud of that!
 
-### A simple stack
+#### A simple stack
 
 No self-hosted app is "easy" to deploy. But we did our best to make things simple. The Maybe app can be [hosted all inside a single Docker container](https://github.com/maybe-finance/maybe/blob/main/docs/hosting/docker.md) with _optional_ market data API dependencies.
 
 For the demos of this write-up, I started a brand new self hosted app in less than 10 minutes!
 
-## The losses
+### The losses
 
 As we're stopping active development on this project, there were clearly some losses. Aside from the fact that growing a B2C SaaS app is challenging in its own right from a business perspective, I'll focus on some of the product/engineering losses that we feel could have been remediated with some more time and money to throw at this problem.
 
-### Data providers, data providers, data providers
+#### Data providers, data providers, data providers
 
 The single biggest challenge with a personal finance app in 2025 is bank providers.
 
@@ -105,7 +131,7 @@ Some companies have had enough time to _work around_ this challenge with all sor
 
 Needless to say, this is a _massive_ challenge for anyone building a personal finance app and is the primary reason why "bootstrapping" a personal finance app with automated bank syncing is an uphill battle. You need a lot of money and time to get this right.
 
-### Data consistency and cache invalidation
+#### Data consistency and cache invalidation
 
 While a dashboard with a net worth graph doesn't look all that complicated, it's one of those "iceberg" problems. The more you dig, the more complexity you find.
 
@@ -121,11 +147,11 @@ Having learned some lessons from our V1 approach to building this app, we opted 
 
 While I believe the final version of this app comes _close_ to full accuracy / consistency of data, there are still inevitable challenges here and something we wish we could have spent some more time on.
 
-## The unexpected challenges
+### The unexpected challenges
 
 And finally, let's talk about a few of the challenges we didn't know we'd be facing.
 
-### OSS, financial privacy, and project management
+#### OSS, financial privacy, and project management
 
 As an open source project, we constantly received bug reports. Unfortunately (but understandably), many users are not comfortable sharing their personal financial situation.
 
@@ -135,7 +161,7 @@ I'm not sure there's a great solution to this. It made the project management an
 
 It made things hard to see it all in one spot, and we didn't realize how much of a roadblock this would become for us.
 
-### Multi-currency + Investments Data
+#### Multi-currency + Investments Data
 
 Building a multi-currency app is tough to begin with. We took on this challenge in the spirit of OSS and I believe we built a fairly comprehensive and solid solution.
 
@@ -153,7 +179,7 @@ In order to show an _accurate_ investment portfolio graph, we need historical pr
 
 We ended up allowing users to create "manual" tickers which has worked fairly well. But the scope of this problem is huge and there's a reason entire applications are built to solely handle investment data (often US-based only).
 
-## Closing thoughts
+### Closing thoughts
 
 Given our tiny team and short time horizon, we're proud of what we've built here and the contributions we've made to OSS in the process. We've built the "engine" and we hope the OSS community can take this core engine and build some interesting use-cases on top of it.
 

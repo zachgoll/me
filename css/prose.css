@@ -89,3 +89,7 @@
   height: auto;
   margin: 1rem 0;
 }
+
+.prose video {
+  margin-bottom: 20px;
+}
