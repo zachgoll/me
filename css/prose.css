@@ -4,37 +4,43 @@
 }
 
 .prose h1 {
-  font-size: 2.25rem;
+  font-size: 1.5rem;
+  font-weight: 600;
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
 .prose h2 {
-  font-size: 1.5rem;
+  font-size: 1.375rem;
+  font-weight: 600;
   margin-top: 1.8rem;
   margin-bottom: 0.8rem;
 }
 
 .prose h3 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
+  font-weight: 600;
   margin-top: 1.6rem;
   margin-bottom: 0.6rem;
 }
 
 .prose h4 {
-  font-size: 1.125rem;
+  font-size: 1rem;
+  font-weight: 600;
   margin-top: 1.4rem;
   margin-bottom: 0.4rem;
 }
 
 .prose h5 {
-  font-size: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
   margin-top: 1.2rem;
   margin-bottom: 0.3rem;
 }
 
 .prose h6 {
   font-size: 0.875rem;
+  font-weight: 600;
   margin-top: 1rem;
   margin-bottom: 0.2rem;
 }

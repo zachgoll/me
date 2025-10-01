@@ -1,5 +1,5 @@
 ---
-title: "Reflections on Building a COSS Personal Finance App"
+title: "Reflections on building a Viral OSS Personal Finance app (50k stars, 2M+ downloads in 1 year)"
 ---
 
 TL;DR - From late 2021 to mid 2025, I worked on "Maybe", the personal finance app. Maybe has since pivoted, and we're now working on a B2B financial planning and forecasting app to help business owners gain insights into their finances without complicated spreadsheets. This post is about the _prior_ personal finance app.

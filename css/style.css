@@ -127,20 +127,26 @@ footer {
 
 .post-link {
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  align-items: flex-start;
   gap: 0.5rem;
   padding: 0.25rem 0;
 }
 
 .post-link__date {
   color: var(--gray-500);
+  flex-shrink: 0;
+  padding-top: 0.125rem;
 }
 
 .post-link__title {
   display: flex;
   gap: 0.5rem;
-  align-items: center;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.post-link__title a {
+  line-height: 1.5;
 }
 
 .post-link__title i {
@@ -158,8 +164,8 @@ footer {
 }
 
 .post-title {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 1.75rem;
+  font-weight: 600;
   margin-bottom: 1.5rem;
   color: var(--gray-900);
 }
@@ -167,6 +173,7 @@ footer {
 @media (min-width: 640px) {
   .post-link__title i {
     display: inline-block;
+    padding-top: 0.125rem;
   }
 
   .intro {
